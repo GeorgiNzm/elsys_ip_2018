@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>My first jsp</title>
+<title>Homework 1</title>
 </head>
 <body>
 	<p>Hello, world!</p>

@@ -31,18 +31,23 @@ public class AdminServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		showAdminPage(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-		request.setAttribute("users", userService.getUsers());	
+		showAdminPage(request, response);
+	}
+
+	protected void showAdminPage(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		resp.setContentType("text/html");
+		req.setAttribute("users", userService.getUsers());
 		getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp")
-			.forward(request, response);
+				.forward(req, resp);
 	}
 
 }

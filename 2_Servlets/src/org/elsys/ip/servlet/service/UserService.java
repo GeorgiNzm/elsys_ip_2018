@@ -7,10 +7,13 @@ import org.elsys.ip.servlet.model.User;
 
 public class UserService {
 	private static List<User> users = new ArrayList<>();
+	private static int idCounter = 0;
 
 	public UserService() {
-		users.add(new User(1, "admin", "admin@admin.bg"));
-		users.add(new User(2, "user", "user@user.bg"));
+		if (getUsers().isEmpty()) {
+			users.add(new User((++idCounter), "admin", "admin@admin.bg"));
+			users.add(new User((++idCounter), "user", "user@user.bg"));
+		}
 	}
 
 	public List<User> getUsers() {
@@ -24,5 +27,17 @@ public class UserService {
 		} else {
 			return null;
 		}
+	}
+
+	public void addUser(User u) {
+		if (!getUsers().contains(u)) getUsers().add(u);
+	}
+
+	public void deleteUser(String name) {
+		getUsers().remove(this.getByName(name));
+	}
+
+	public User updateUser(String newName, String newEmail, String oldName) {
+		return getByName(oldName).setName(newName).setEmail(newEmail);
 	}
 }

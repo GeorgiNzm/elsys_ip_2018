@@ -19,9 +19,28 @@
 				<td>${user.id}</td>
 				<td>${user.name}</td>
 				<td>${user.email}</td>
+				<td>
+					<form action="delete" method="POST">
+						<input type="hidden" name= "name" value="${user.name}">
+						<input type="submit" value="Delete User">
+					</form>
+				</td>
 				<td><a href="user?name=${user.name}">Go to user page</a></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<br>
+
+	<form action="add" method="GET">
+		<input type="submit" value="Add User">
+	</form>
+
+	<form action="search" method="GET">
+		<input type="submit" value="Open search page">
+	</form>
+
+	<form action="logout" method="POST">
+		<input type="submit" value="Logout">
+	</form>
 </body>
 </html>
