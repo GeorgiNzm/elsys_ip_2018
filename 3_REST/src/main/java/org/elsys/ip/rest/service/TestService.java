@@ -4,6 +4,7 @@ import org.elsys.ip.rest.model.Test;
 import org.elsys.ip.rest.repository.TestRepository;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class TestService {
 

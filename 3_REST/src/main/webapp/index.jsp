@@ -11,6 +11,12 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+   <h1>Welcome to the Application...</h1>
+   <button onclick="window.location.href='/api/weapons/download'">Download</button><br><br>
+
+   <form action="/api/weapons/upload" enctype="multipart/form-data" name="upload-form" method="post">
+     File: <input type="file" name="csv"/>
+     <input type="submit" value="Upload"/>
+   </form>
   </body>
 </html>

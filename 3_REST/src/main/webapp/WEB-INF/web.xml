@@ -11,6 +11,10 @@
         org.glassfish.jersey.servlet.ServletContainer
       </servlet-class>
       <init-param>
+        <param-name>jersey.ws.rs.Application</param-name>
+        <param-value>org.elsys.ip.rest.config.ApplicationConfig</param-value>
+      </init-param>
+      <init-param>
         <param-name>jersey.config.server.provider.packages</param-name>
         <param-value>org.elsys.ip.rest.resource</param-value>
       </init-param>
@@ -21,12 +25,4 @@
       <servlet-name>jersey-serlvet</servlet-name>
       <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-      <servlet-name>TestServlet</servlet-name>
-      <servlet-class>org.elsys.ip.rest.servlet.TestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-      <servlet-name>TestServlet</servlet-name>
-      <url-pattern>/servlet/*</url-pattern>
-    </servlet-mapping>-->
+-->
