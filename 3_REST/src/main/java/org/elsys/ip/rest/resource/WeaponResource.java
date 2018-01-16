@@ -1,12 +1,8 @@
 package org.elsys.ip.rest.resource;
 
-import com.opencsv.CSVReader;
 import org.elsys.ip.rest.model.Weapon;
 import org.elsys.ip.rest.repository.WeaponRepository;
 import org.elsys.ip.rest.service.WeaponService;
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
-import org.glassfish.jersey.media.multipart.FormDataParam;
-import org.glassfish.jersey.server.mvc.Viewable;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
